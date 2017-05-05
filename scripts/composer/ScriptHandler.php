@@ -14,7 +14,7 @@ use Composer\Util\ProcessExecutor;
 class ScriptHandler {
 
   protected static function getDrupalRoot($project_root) {
-    return $project_root .  '/docroot';
+    return $project_root .  '/web';
   }
 
   public static function buildScaffold(Event $event) {
@@ -74,11 +74,11 @@ class ScriptHandler {
 
     $directories = array(
       "bin",
-      "docroot/core",
-      "docroot/libraries",
-      "docroot/modules/contrib",
-      "docroot/profiles/contrib",
-      "docroot/themes/contrib",
+      "web/core",
+      "web/libraries",
+      "web/modules/contrib",
+      "web/profiles/contrib",
+      "web/themes/contrib",
       "drush/contrib",
       "vendor",
     );
