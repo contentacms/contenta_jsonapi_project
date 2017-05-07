@@ -46,5 +46,5 @@ Use see "api_first/README.md"
 
 ## Development
 
-- todo
+Please use https://github.com/drupal-http-apis/contenta_jsonapi for issues.
 
