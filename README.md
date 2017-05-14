@@ -32,7 +32,6 @@ Use see "api_first/README.md"
 
 ## TODOs
 
-- Find better name
 - Use a proper template engine (markup-js is sad)
 - Provide complete form state management
 
@@ -47,4 +46,3 @@ Use see "api_first/README.md"
 ## Development
 
 Please use https://github.com/drupal-http-apis/contenta_jsonapi for issues.
-
