@@ -41,7 +41,10 @@ class ScriptHandler {
         $fs->touch($root . '/'. $dir . '/.gitkeep');
       }
     }
-
+    // Create .gitignore for modern Composer workflows.
+    if (!$fs->exists($root . '/' . '.gitignore')) {
+      $fs->dumpFile($root . '/' . '.gitignore', "bin/\nvendor/\nweb/\n");
+    }
 
     // Prepare the settings file for installation
     if (!$fs->exists($root . '/sites/default/settings.php')) {
