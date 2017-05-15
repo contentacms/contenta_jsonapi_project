@@ -1,12 +1,31 @@
-# Usage
+# Contenta {json:api} - Demo
 
-* Installs the Drupal site, for example via
+This repository is an example of how easily you can start a contenta project using [Circle CI](https://circleci.com) and [Pantheon](https://pantheon.io).
+
+The goal of this repository is to make an example of how easily you can have a modern workflow to install a Drupal 8 back-end ready to serve your decoupled sites.
+
+## About Contenta
+Contenta is the community effort of an API-First distribution for Drupal. _Contenta_ means happy in [Catalan](https://en.wikipedia.org/wiki/Catalan_language) and indicates the goal of this project, _Contenta is about Content, it makes your content happy_. The Contenta project aims to have several distributions that can share goals and resources with all the thriving decoupled solutions in Drupal 8. This particular instance focuses on [JSON API](http://jsonapi.org).
+
+By installing the contenta distribution you will get an empty drupal installation ready for you to start creating content types. However if you are only testing the distribution, you can install the `recipes_magazin` contrib module to get a rich content model with example content to play with.
+
+In order to provide a uniform experience the _Contenta_ project aligns with the [Out of The Box experience initiative](https://www.drupal.org/node/2847582). We are under active collaboration to provide the same content types and the same default content so we can offer an out of the box experience with decoupling structured content.
+
+## About JSON API
+[JSON API](http://jsonapi.org) is an opinionated modern specification that allows building REST based digital experiences without the typical REST pains. _Contenta {json:api}_ is based on the [jsonapi](https://www.drupal.org/project/jsonapi) module to allow interacting with your content following the specification.
+
+There are several documentation resources of interest:
+
+  - [The official specification](http://jsonapi.org).
+  - [The official module documentation in Drupal.org](https://www.drupal.org/docs/8/modules/json-api/json-api).
+  - [The video series about the Drupal module](https://www.youtube.com/playlist?list=PLZOQ_ZMpYrZsyO-3IstImK1okrpfAjuMZ).
+
+## Known consumers
+This demo repository will only expose an API to build digital experiences out of it. You will find examples on how to build feature rich consumers for Contenta in the list below:
+
 ```
-api_first/development/build-api-first.sh
+We have no examples at the moment. We are working hard on it.
 ```
-* Log into drupal and client a oauth client on ```/admin/config/people/simple_oauth/oauth2_client/add```
-* Copy ```example.env``` to ```.env``` and adapt the values.
-* Get started.
 
 ## Generate stuff
 
@@ -26,23 +45,21 @@ building a decoupled Drupal site:
 It leverages some mapping between formatters/widgets and react components placed defined in ```form.mapping.json```
 and ```view.mapping.json```.
 
+---
 
-## Installation profile usage
-Use see "api_first/README.md"
+## Usage
+Fork or clone this repository and add your Cirlcle CI and Pantheon.io information.
 
-## TODOs
+### Circle CI integration
+TODO
 
-- Use a proper template engine (markup-js is sad)
-- Provide complete form state management
+### Pantheon integration
+TODO
 
-- Support multivalue fields in view
-- Support multivalue fields in form
+### Adding custom code
+Using a Composer based workflow (LINK TO A BLOG POST NEEDED) you don't have to include Drupal core or contrib modules in your repository. Circle CI will download all the dependencies for you before deploying the assembled site to Pantheon. However, you will probably need to add custom code to meet your project requirements.
 
-- Provide view and form components for much more components.
+TODO: Explain the recommended workflow to add custom code.
 
-- more ...
-- Use some eslint configuration
-
-## Development
-
-Please use https://github.com/drupal-http-apis/contenta_jsonapi for issues.
+### Deploying your configuration
+_Maybe this sections is unnecessary, I was thinking about recommending something like https://www.chapterthree.com/blog/installing-drupal-8-from-configuration. That would imply forking the distribution (contenta_jsonapi) so they can add their config there (which I don't know if it's a good idea)._
