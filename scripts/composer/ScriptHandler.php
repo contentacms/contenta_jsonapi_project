@@ -103,15 +103,17 @@ class ScriptHandler {
     $extra = $event->getComposer()->getPackage()->getExtra();
     if (isset($extra['installer-paths'])) {
       foreach ($extra['installer-paths'] as $path => $criteria) {
-        if (array_intersect(['drupal/thunder', 'type:drupal-profile'], $criteria)) {
-          $thunder = $path;
+        if (array_intersect(['drupal-http-apis/contenta_jsonapi', 'type:drupal-profile'], $criteria)) {
+          $working_path = $path;
         }
       }
-      if (isset($thunder)) {
-        $thunder = str_replace('{$name}', 'thunder', $thunder);
+      if (isset($working_path)) {
+        // We replace any possible name with the distribution name.
+        $working_path = str_replace('{$name}', 'contenta_jsonapi', $working_path);
         $executor = new ProcessExecutor($event->getIO());
         $output = NULL;
-        $executor->execute('npm install', $output, $thunder);
+        // Execute npm install in the profile folder.
+        $executor->execute('npm install', $output, $working_path);
         $event->getIO()->write($output);
       }
     }
