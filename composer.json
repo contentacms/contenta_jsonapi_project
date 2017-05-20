@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-        "drupal-http-apis/contenta_jsonapi": "dev-master",
+        "drupal-http-apis/contenta_jsonapi": "dev-8.x-1.x",
         "composer/installers": "^1.2",
         "drupal-composer/drupal-scaffold": "^2.2",
         "cweagans/composer-patches": "~1.0",
