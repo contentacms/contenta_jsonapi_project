@@ -13,7 +13,7 @@
         {
             "type": "package",
             "package": {
-                "name": "enyo/dropzone-library",
+                "name": "enyo-libray/dropzone",
                 "version": "4.2.0",
                 "type": "drupal-library",
                 "source": {
