@@ -60,6 +60,3 @@ TODO
 Using a Composer based workflow (LINK TO A BLOG POST NEEDED) you don't have to include Drupal core or contrib modules in your repository. Circle CI will download all the dependencies for you before deploying the assembled site to Pantheon. However, you will probably need to add custom code to meet your project requirements.
 
 TODO: Explain the recommended workflow to add custom code.
-
-### Deploying your configuration
-_Maybe this sections is unnecessary, I was thinking about recommending something like https://www.chapterthree.com/blog/installing-drupal-8-from-configuration. That would imply forking the distribution (contenta_jsonapi) so they can add their config there (which I don't know if it's a good idea)._
