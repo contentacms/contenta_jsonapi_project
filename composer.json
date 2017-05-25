@@ -9,6 +9,19 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "enyo/dropzone-library",
+                "version": "4.2.0",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/enyo/dropzone",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
         }
     ],
     "require": {
