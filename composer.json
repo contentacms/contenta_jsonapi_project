@@ -32,13 +32,11 @@
         "drupal-scaffold": "Drupal\\DrupalScaffold\\Plugin::scaffold",
         "post-install-cmd": [
             "Drupal\\composer\\ScriptHandler::buildScaffold",
-            "Drupal\\composer\\ScriptHandler::createRequiredFiles",
-            "Drupal\\composer\\ScriptHandler::deployLibraries"
+            "Drupal\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-update-cmd": [
             "Drupal\\composer\\ScriptHandler::buildScaffold",
-            "Drupal\\composer\\ScriptHandler::createRequiredFiles",
-            "Drupal\\composer\\ScriptHandler::deployLibraries"
+            "Drupal\\composer\\ScriptHandler::createRequiredFiles"
         ]
     },
     "extra": {
