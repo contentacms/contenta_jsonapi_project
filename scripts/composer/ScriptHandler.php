@@ -103,7 +103,7 @@ class ScriptHandler {
     $extra = $event->getComposer()->getPackage()->getExtra();
     if (isset($extra['installer-paths'])) {
       foreach ($extra['installer-paths'] as $path => $criteria) {
-        if (array_intersect(['drupal-http-apis/contenta_jsonapi', 'type:drupal-profile'], $criteria)) {
+        if (array_intersect(['contentacms/contenta_jsonapi', 'type:drupal-profile'], $criteria)) {
           $working_path = $path;
         }
       }
