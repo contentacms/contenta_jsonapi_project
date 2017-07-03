@@ -92,30 +92,4 @@ class ScriptHandler {
     echo "(!) Now you can run 'composer install' to get the latest dependencies.";
 
   }
-
-  /**
-   * Moves front-end libraries to Drupal's installed directory.
-   *
-   * @param \Composer\Script\Event $event
-   *   The script event.
-   */
-  public static function deployLibraries(Event $event) {
-    $extra = $event->getComposer()->getPackage()->getExtra();
-    if (isset($extra['installer-paths'])) {
-      foreach ($extra['installer-paths'] as $path => $criteria) {
-        if (array_intersect(['contentacms/contenta_jsonapi', 'type:drupal-profile'], $criteria)) {
-          $working_path = $path;
-        }
-      }
-      if (isset($working_path)) {
-        // We replace any possible name with the distribution name.
-        $working_path = str_replace('{$name}', 'contenta_jsonapi', $working_path);
-        $executor = new ProcessExecutor($event->getIO());
-        $output = NULL;
-        // Execute npm install in the profile folder.
-        $executor->execute('npm install', $output, $working_path);
-        $event->getIO()->write($output);
-      }
-    }
-  }
 }
