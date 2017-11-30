@@ -57,7 +57,10 @@
         }
     },
     "config": {
-        "preferred-install": "source",
+        "preferred-install": {
+            "asm89/stack-cors": "source",
+            "*": "auto"
+        },
         "bin-dir": "bin/"
     }
 }
