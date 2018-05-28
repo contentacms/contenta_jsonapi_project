@@ -2,7 +2,7 @@
     "name": "contentacms/contenta-jsonapi-project",
     "description": "Project template for ",
     "type": "project",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "authors": [
     ],
     "repositories": [
