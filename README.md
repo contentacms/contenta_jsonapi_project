@@ -44,19 +44,3 @@ building a decoupled Drupal site:
 
 It leverages some mapping between formatters/widgets and react components placed defined in ```form.mapping.json```
 and ```view.mapping.json```.
-
----
-
-## Usage
-Fork or clone this repository and add your Cirlcle CI and Pantheon.io information.
-
-### Circle CI integration
-TODO
-
-### Pantheon integration
-TODO
-
-### Adding custom code
-Using a Composer based workflow (LINK TO A BLOG POST NEEDED) you don't have to include Drupal core or contrib modules in your repository. Circle CI will download all the dependencies for you before deploying the assembled site to Pantheon. However, you will probably need to add custom code to meet your project requirements.
-
-TODO: Explain the recommended workflow to add custom code.
