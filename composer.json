@@ -12,7 +12,7 @@
     }
   ],
   "require": {
-    "contentacms/contenta_jsonapi": "dev-8.x-1.x",
+    "contentacms/contenta_jsonapi": "dev-8.x-2.x",
     "drupal-composer/drupal-scaffold": "^2.5",
     "cweagans/composer-patches": "^1.6",
     "webflo/drupal-core-strict": "^8.6.0-beta2",
@@ -78,7 +78,6 @@
   },
   "config": {
     "preferred-install": {
-      "asm89/stack-cors": "source",
       "*": "auto"
     }
   }
