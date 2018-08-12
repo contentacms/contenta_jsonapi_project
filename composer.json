@@ -40,16 +40,16 @@
       "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
     ],
     "dependency-cleanup": [
-      "Drupal\\composer\\ScriptHandler::dependencyCleanup"
+      "DrupalProject\\composer\\ScriptHandler::dependencyCleanup"
     ],
     "drupal-scaffold": "Drupal\\DrupalScaffold\\Plugin::scaffold",
     "post-install-cmd": [
-      "Drupal\\composer\\ScriptHandler::buildScaffold",
-      "Drupal\\composer\\ScriptHandler::createRequiredFiles"
+      "DrupalProject\\composer\\ScriptHandler::buildScaffold",
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
     "post-update-cmd": [
-      "Drupal\\composer\\ScriptHandler::buildScaffold",
-      "Drupal\\composer\\ScriptHandler::createRequiredFiles"
+      "DrupalProject\\composer\\ScriptHandler::buildScaffold",
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
     ]
   },
   "extra": {
