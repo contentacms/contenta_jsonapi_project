@@ -1,60 +1,85 @@
 {
-    "name": "contentacms/contenta-jsonapi-project",
-    "description": "Project template for ",
-    "type": "project",
-    "license": "GPL-2.0-or-later",
-    "authors": [
-    ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        }
-    ],
-    "require": {
-        "contentacms/contenta_jsonapi": "dev-8.x-2.x",
-        "drupal-composer/drupal-scaffold": "^2.2",
-        "cweagans/composer-patches": "^1.6.0",
-        "webflo/drupal-core-strict": "8.5.3",
-        "drush/drush": "~8.1.12"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ]
-    },
-    "scripts": {
-        "dependency-cleanup": [
-            "Drupal\\composer\\ScriptHandler::dependencyCleanup"
-        ],
-        "drupal-scaffold": "Drupal\\DrupalScaffold\\Plugin::scaffold",
-        "post-install-cmd": [
-            "Drupal\\composer\\ScriptHandler::buildScaffold",
-            "Drupal\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "Drupal\\composer\\ScriptHandler::buildScaffold",
-            "Drupal\\composer\\ScriptHandler::createRequiredFiles"
-        ]
-    },
-    "extra": {
-        "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/contrib/{$name}": ["type:drupal-drush"]
-        },
-        "enable-patching": true,
-        "patches":{}
-    },
-    "config": {
-        "preferred-install": {
-            "*": "auto"
-        },
-        "bin-dir": "bin/"
+  "name": "contentacms/contenta-jsonapi-project",
+  "description": "Project template for Contenta CMS.",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
     }
+  ],
+  "require": {
+    "contentacms/contenta_jsonapi": "dev-8.x-1.x",
+    "drupal-composer/drupal-scaffold": "^2.5",
+    "cweagans/composer-patches": "^1.6",
+    "webflo/drupal-core-strict": "^8.6.0-beta2",
+    "vlucas/phpdotenv": "^2.4",
+    "drush/drush": "^9.0.0",
+    "composer/installers": "^1.2",
+    "webflo/drupal-finder": "^1.0.0",
+    "webmozart/path-util": "^2.3"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "classmap": [
+      "scripts/composer/ScriptHandler.php"
+    ],
+    "files": [
+      "load.environment.php"
+    ]
+  },
+  "scripts": {
+    "pre-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "pre-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "dependency-cleanup": [
+      "Drupal\\composer\\ScriptHandler::dependencyCleanup"
+    ],
+    "drupal-scaffold": "Drupal\\DrupalScaffold\\Plugin::scaffold",
+    "post-install-cmd": [
+      "Drupal\\composer\\ScriptHandler::buildScaffold",
+      "Drupal\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-update-cmd": [
+      "Drupal\\composer\\ScriptHandler::buildScaffold",
+      "Drupal\\composer\\ScriptHandler::createRequiredFiles"
+    ]
+  },
+  "extra": {
+    "installer-paths": {
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "drush/contrib/{$name}": [
+        "type:drupal-drush"
+      ]
+    },
+    "enable-patching": true,
+    "patches": {}
+  },
+  "config": {
+    "preferred-install": {
+      "asm89/stack-cors": "source",
+      "*": "auto"
+    }
+  }
 }
