@@ -64,7 +64,10 @@ class ScriptHandler {
 
   public static function buildScaffold(Event $event) {
     $fs = new Filesystem();
-    if (!$fs->exists(static::getDrupalRoot(getcwd()) . '/autoload.php')) {
+    $drupalFinder = new DrupalFinder();
+    $drupalFinder->locateRoot(getcwd());
+    $drupalRoot = $drupalFinder->getDrupalRoot();
+    if (!$fs->exists($drupalRoot . '/autoload.php')) {
       \DrupalComposer\DrupalScaffold\Plugin::scaffold($event);
     }
   }
