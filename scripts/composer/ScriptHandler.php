@@ -62,6 +62,13 @@ class ScriptHandler {
     }
   }
 
+  public static function buildScaffold(Event $event) {
+    $fs = new Filesystem();
+    if (!$fs->exists(static::getDrupalRoot(getcwd()) . '/autoload.php')) {
+      \DrupalComposer\DrupalScaffold\Plugin::scaffold($event);
+    }
+  }
+
   /**
    * Checks if the installed version of Composer is compatible.
    *
