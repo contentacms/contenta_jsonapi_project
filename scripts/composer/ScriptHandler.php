@@ -62,16 +62,6 @@ class ScriptHandler {
     }
   }
 
-  public static function buildScaffold(Event $event) {
-    $fs = new Filesystem();
-    $drupalFinder = new DrupalFinder();
-    $drupalFinder->locateRoot(getcwd());
-    $drupalRoot = $drupalFinder->getDrupalRoot();
-    if (!$fs->exists($drupalRoot . '/autoload.php')) {
-      \DrupalComposer\DrupalScaffold\Plugin::scaffold($event);
-    }
-  }
-
   /**
    * Checks if the installed version of Composer is compatible.
    *
