@@ -42,13 +42,7 @@
     "dependency-cleanup": [
       "DrupalProject\\composer\\ScriptHandler::dependencyCleanup"
     ],
-    "drupal-scaffold": "Drupal\\DrupalScaffold\\Plugin::scaffold",
-    "post-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-    ],
-    "post-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-    ]
+    "drupal-scaffold": "Drupal\\DrupalScaffold\\Plugin::scaffold"
   },
   "extra": {
     "installer-paths": {
