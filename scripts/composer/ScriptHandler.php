@@ -60,6 +60,10 @@ class ScriptHandler {
       $event->getIO()
         ->write("Create a sites/default/files directory with chmod 0777");
     }
+    $env_local_path = Path::join([$drupalRoot, '/../.env.local']);
+    if (!$fs->exists($env_local_path)) {
+      $fs->copy(Path::join([$drupalRoot, '/../.env.local.example']), $env_local_path);
+    }
   }
 
   /**

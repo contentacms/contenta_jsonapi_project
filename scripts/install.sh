@@ -19,12 +19,6 @@ then
   echo -e "${FG_C}${EBG_C} ERROR ${NO_C} Unable to locate find the composer project: 'composer config bin-dir'"
   exit 1
 fi
-if [ $1 ] ; then
-  DEST_DIR=$1
-else
-  DEST_DIR=$(pwd)
-  echo -e "${FG_C}${WBG_C} WARNING ${NO_C} No install path was provided. Using the current directory: $DEST_DIR"
-fi
 DRUSH="$DEST_DIR/$COMPOSER_BIN_DIR/drush"
 $DRUSH status > /dev/null
 if [ $? -ne 0 ]; then

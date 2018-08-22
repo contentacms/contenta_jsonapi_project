@@ -18,3 +18,10 @@ try {
 catch (InvalidPathException $e) {
   // Do nothing. Production environments rarely use .env files.
 }
+$dotenv_local = new Dotenv(__DIR__, '.env.local');
+try {
+  $dotenv_local->load();
+}
+catch (InvalidPathException $e) {
+  // Do nothing. Production environments rarely use .env files.
+}
