@@ -33,6 +33,8 @@
     ]
   },
   "scripts": {
+    "install:mysql": "scripts/install-mysql.sh",
+    "install:sqlite": "scripts/install-sqlite.sh",
     "pre-install-cmd": [
       "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
     ],

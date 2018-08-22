@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+DB_URL="mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOSTNAME:$MYSQL_PORT/$MYSQL_DATABASE"
+./install.sh
