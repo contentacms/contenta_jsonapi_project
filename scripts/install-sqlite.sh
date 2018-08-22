@@ -7,10 +7,10 @@ else
 fi
 
 if [ -e $DEST_DIR/.env ]; then
-    export $(cat $DEST_DIR/.env | xargs)
+    export $(grep -v '^#' $DEST_DIR/.env | grep -v '^$' | xargs)
 fi
 if [ -e $DEST_DIR/.env.local ]; then
-    export $(cat $DEST_DIR/.env.local | xargs)
+    export $(grep -v '^#' $DEST_DIR/.env.local | grep -v '^$' | xargs)
 fi
 
 export DB_URL="sqlite://$SQLITE_PATH/$SQLITE_DATABASE"
