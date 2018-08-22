@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 if [ $1 ] ; then
-  DEST_DIR=$1
+  export DEST_DIR=$1
 else
-  DEST_DIR=$(pwd)
+  export DEST_DIR=$(pwd)
 fi
 
 if [ -e $DEST_DIR/.env ]; then
@@ -13,5 +13,5 @@ if [ -e $DEST_DIR/.env.local ]; then
     export $(cat $DEST_DIR/.env.local | xargs)
 fi
 
-DB_URL="mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOSTNAME:$MYSQL_PORT/$MYSQL_DATABASE"
-./install.sh
+export DB_URL="mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOSTNAME:$MYSQL_PORT/$MYSQL_DATABASE"
+./$(dirname $0)/install.sh
