@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 COMPOSER="$(which composer)"
-COMPOSER_BIN_DIR="$(composer config bin-dir --working-dir $(dirname $(dirname $0)) 2> /dev/null)"
 
 # Define the color scheme.
 FG_C='\033[1;37m'
@@ -22,11 +21,6 @@ echo -e "\n\n"
 if [ -z "$COMPOSER" ]
 then
   echo -e "${FG_C}${EBG_C} ERROR ${NO_C} Unable to locate composer. Make sure composer is installed before proceeding: 'which composer'"
-  exit 1
-fi
-if [ -z "$COMPOSER_BIN_DIR" ]
-then
-  echo -e "${FG_C}${EBG_C} ERROR ${NO_C} Unable to locate find the composer project: 'composer config bin-dir'"
   exit 1
 fi
 
