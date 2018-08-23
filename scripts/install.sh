@@ -19,7 +19,7 @@ then
   echo -e "${FG_C}${EBG_C} ERROR ${NO_C} Unable to locate find the composer project: 'composer config vendor-dir'"
   exit 1
 fi
-DRUSH="$DEST_DIR/$COMPOSER_VENDOR_DIR/drush/drush/drush"
+export DRUSH="$DEST_DIR/$COMPOSER_VENDOR_DIR/drush/drush/drush"
 $DRUSH status > /dev/null
 if [ $? -ne 0 ]; then
   echo -e "${FG_C}${EBG_C} ERROR ${NO_C} Drush is required to install Contenta CMS. Please install Contenta CMS using Composer. See http://www.contentacms.org/#install"
