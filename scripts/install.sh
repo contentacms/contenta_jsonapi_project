@@ -41,7 +41,7 @@ echo -e "${FG_C}${BG_C} EXECUTING ${NO_C} $DRUSH site-install --verbose --yes \\
 
 # There is a problem installing from CLI. Drush can't locate some required services. Reinstalling a
 # second time usually does the trick.
-$DRUSH site-install --verbose --yes \
+$DRUSH site-install contenta_jsonapi --verbose --yes \
   --root=$DEST_DIR/$DOCROOT \
   --db-url=$DB_URL \
   --site-mail=$SITE_MAIL \
@@ -49,7 +49,7 @@ $DRUSH site-install --verbose --yes \
   --site-name=$SITE_NAME \
   --account-name=$ACCOUNT_NAME \
   --account-pass="$ACCOUNT_PASS";
-$DRUSH site-install --verbose --yes \
+$DRUSH site-install contenta_jsonapi --verbose --yes \
   --root=$DEST_DIR/$DOCROOT \
   --db-url=$DB_URL \
   --site-mail=$SITE_MAIL \
