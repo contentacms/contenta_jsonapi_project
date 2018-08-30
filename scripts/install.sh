@@ -37,8 +37,18 @@ echo -e "${FG_C}${BG_C} EXECUTING ${NO_C} $DRUSH site-install contenta_jsonapi -
                           --account-mail=$ACCOUNT_MAIL \\
                           --site-name=$SITE_NAME \\
                           --account-name=$ACCOUNT_NAME \\
-                          --account-pass=\"[REDACTED]\";\n\n"
+                          --account-pass=\"$ACCOUNT_PASS\";\n\n"
 
+# There is a problem installing from CLI. Drush can't locate some required services. Reinstalling a
+# second time usually does the trick.
+$DRUSH site-install contenta_jsonapi --verbose --yes \
+  --root=$DEST_DIR/$DOCROOT \
+  --db-url=$DB_URL \
+  --site-mail=$SITE_MAIL \
+  --account-mail=$ACCOUNT_MAIL \
+  --site-name=$SITE_NAME \
+  --account-name=$ACCOUNT_NAME \
+  --account-pass="$ACCOUNT_PASS";
 $DRUSH site-install contenta_jsonapi --verbose --yes \
   --root=$DEST_DIR/$DOCROOT \
   --db-url=$DB_URL \
