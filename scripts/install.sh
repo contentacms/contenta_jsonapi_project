@@ -54,6 +54,6 @@ if [ $? -ne 0 ]; then
 fi
 
 echo -e "${FG_C}${BG_C} EXECUTING ${NO_C} $DRUSH en -y recipes_magazin contentajs\n\n"
-$DRUSH en -y recipes_magazin contentajs contenta_graphql
+$DRUSH en -y recipes_magazin contentajs
 
 echo -e "${FG_C}${BG_C} 🎉 ${NO_C} Contenta CMS was installed! Your admin password is: $ACCOUNT_PASS\n\n"
