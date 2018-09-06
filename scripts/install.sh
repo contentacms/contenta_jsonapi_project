@@ -32,12 +32,12 @@ echo " Installing Contenta CMS for local usage "
 echo "-----------------------------------------------"
 echo -e "${FG_C}${BG_C} EXECUTING ${NO_C} $DRUSH site-install contenta_jsonapi --verbose --yes \\
   --root=$DEST_DIR/$DOCROOT \\
-  --db-url=$DB_URL \\
+  --db-url=$DB_URL_REDACTED \\
   --site-mail=$SITE_MAIL \\
   --account-mail=$ACCOUNT_MAIL \\
   --site-name=$SITE_NAME \\
   --account-name=$ACCOUNT_NAME \\
-  --account-pass=\"$ACCOUNT_PASS\";\n\n"
+  --account-pass=\"[REDACTED]\";\n\n"
 
 $DRUSH site-install contenta_jsonapi --verbose --yes \
   --root=$DEST_DIR/$DOCROOT \

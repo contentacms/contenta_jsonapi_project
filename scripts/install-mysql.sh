@@ -14,4 +14,5 @@ if [ -e $DEST_DIR/.env.local ]; then
 fi
 
 export DB_URL="mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOSTNAME:$MYSQL_PORT/$MYSQL_DATABASE"
+export DB_URL_REDACTED="mysql://$MYSQL_USER:[REDACTED]@$MYSQL_HOSTNAME:$MYSQL_PORT/$MYSQL_DATABASE"
 ./$(dirname $0)/install.sh
