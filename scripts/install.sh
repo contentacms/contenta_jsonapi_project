@@ -53,6 +53,9 @@ if [ $? -ne 0 ]; then
   exit 3
 fi
 
+
+mkdir -p $DEST_DIR/$DOCROOT/sites/default/files/tmp;
+
 echo -e "${FG_C}${BG_C} EXECUTING ${NO_C} $DRUSH en -y recipes_magazin contentajs\n\n"
 $DRUSH en -y recipes_magazin contentajs
 
