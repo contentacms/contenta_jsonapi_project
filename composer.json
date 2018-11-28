@@ -20,7 +20,7 @@
     }
   ],
   "require": {
-    "contentacms/contenta_jsonapi": "dev-8.x-2.x",
+    "contentacms/contenta_jsonapi": "dev-8.x-3.x",
     "drupal-composer/drupal-scaffold": "^2.5",
     "cweagans/composer-patches": "^1.6",
     "vlucas/phpdotenv": "^2.4",
