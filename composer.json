@@ -1,88 +1,93 @@
 {
-  "name": "contentacms/contenta-jsonapi-project",
-  "description": "Project template for Contenta CMS.",
-  "type": "project",
-  "license": "GPL-2.0-or-later",
-  "authors": [
-    {
-      "name": "Mateu Aguiló Bosch",
-      "email": "mateu.aguilo.bosch@gmail.com"
-    },
-    {
-      "name": "Daniel Wehner",
-      "email": "dawehner@users.noreply.github.com"
-    }
-  ],
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    },
-    {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    }
-  ],
-  "require": {
-    "contentacms/contenta_jsonapi": "dev-8.x-3.x",
-    "drupal/core-composer-scaffold": "^9.0",
-    "composer/installers": "^1.2",
-    "drush/drush": "^9.0||^10.0",
-    "vlucas/phpdotenv": "^2.4",
-    "oomphinc/composer-installers-extender": "^2.0"
-  },
-  "require-dev": {
-    "drupal/core-dev": "^9.0"
-  },
-  "conflict": {
-    "drupal/drupal": "*"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "autoload": {
-    "files": ["load.environment.php"]
-  },
-  "scripts": {
-    "install:with-mysql": "scripts/install-mysql.sh",
-    "install:with-sqlite": "scripts/install-sqlite.sh",
-    "pre-install-cmd": "Drupal\\Composer\\Composer::ensureComposerVersion",
-    "pre-update-cmd": "Drupal\\Composer\\Composer::ensureComposerVersion",
-    "pre-autoload-dump": "Drupal\\Core\\Composer\\Composer::preAutoloadDump",
-    "drupal-phpunit-upgrade-check": "Drupal\\Core\\Composer\\Composer::upgradePHPUnit",
-    "drupal-phpunit-upgrade": [
-      "@composer update phpunit/phpunit --with-dependencies --no-progress",
-      "@composer require phpspec/prophecy-phpunit:^2 --no-progress --no-suggest"
+    "name": "contentacms/contenta-jsonapi-project",
+    "description": "Project template for Contenta CMS.",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Mateu Aguiló Bosch",
+            "email": "mateu.aguilo.bosch@gmail.com"
+        },
+        {
+            "name": "Daniel Wehner",
+            "email": "dawehner@users.noreply.github.com"
+        }
     ],
-    "post-update-cmd": [
-      "Drupal\\Composer\\Composer::generateMetapackages"
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
     ],
-    "phpcs": "phpcs --standard=core/phpcs.xml.dist --runtime-set installed_paths $($COMPOSER_BINARY config vendor-dir)/drupal/coder/coder_sniffer --",
-    "phpcbf": "phpcbf --standard=core/phpcs.xml.dist --runtime-set installed_paths $($COMPOSER_BINARY config vendor-dir)/drupal/coder/coder_sniffer --"
-  },
-  "extra": {
-    "composer-exit-on-patch-failure": true,
-    "installer-types": ["bower-asset", "npm-asset"],
-    "installer-paths": {
-      "web/core": ["type:drupal-core"],
-      "web/libraries/{$name}": [
-        "type:drupal-library",
-        "type:bower-asset",
-        "type:npm-asset"
-      ],
-      "web/modules/contrib/{$name}": ["type:drupal-module"],
-      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-      "web/themes/contrib/{$name}": ["type:drupal-theme"],
-      "drush/contrib/{$name}": ["type:drupal-drush"]
+    "require": {
+        "contentacms/contenta_jsonapi": "dev-8.x-3.x",
+        "drupal/core-composer-scaffold": "^9.0",
+        "composer/installers": "^1.2",
+        "drush/drush": "^9.0||^10.0",
+        "vlucas/phpdotenv": "^2.4",
+        "oomphinc/composer-installers-extender": "^2.0"
     },
-    "enable-patching": true,
-    "drupal-scaffold": {
-      "locations": {
-        "web-root": "web/"
-      }
+    "require-dev": {
+        "drupal/core-dev": "^9.0"
     },
-    "patches": {}
-  },
-  "config": {
-    "sort-packages": true
-  }
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "files": [
+            "load.environment.php"
+        ]
+    },
+    "scripts": {
+        "install:with-mysql": "scripts/install-mysql.sh",
+        "install:with-sqlite": "scripts/install-sqlite.sh",
+        "pre-install-cmd": "Drupal\\Composer\\Composer::ensureComposerVersion",
+        "pre-update-cmd": "Drupal\\Composer\\Composer::ensureComposerVersion",
+        "pre-autoload-dump": "Drupal\\Core\\Composer\\Composer::preAutoloadDump",
+        "drupal-phpunit-upgrade-check": "Drupal\\Core\\Composer\\Composer::upgradePHPUnit",
+        "drupal-phpunit-upgrade": [
+            "@composer update phpunit/phpunit --with-dependencies --no-progress",
+            "@composer require phpspec/prophecy-phpunit:^2 --no-progress --no-suggest"
+        ],
+        "post-update-cmd": [
+            "Drupal\\Composer\\Composer::generateMetapackages"
+        ],
+        "phpcs": "phpcs --standard=core/phpcs.xml.dist --runtime-set installed_paths $($COMPOSER_BINARY config vendor-dir)/drupal/coder/coder_sniffer --",
+        "phpcbf": "phpcbf --standard=core/phpcs.xml.dist --runtime-set installed_paths $($COMPOSER_BINARY config vendor-dir)/drupal/coder/coder_sniffer --"
+    },
+    "extra": {
+        "composer-exit-on-patch-failure": true,
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "enable-patching": true,
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "patches": {}
+    },
+    "config": {
+        "sort-packages": true
+    }
 }
