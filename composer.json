@@ -17,21 +17,26 @@
     {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
     }
   ],
   "require": {
     "contentacms/contenta_jsonapi": "dev-8.x-3.x",
-    "drupal-composer/drupal-scaffold": "^2.5",
-    "cweagans/composer-patches": "^1.6",
-    "vlucas/phpdotenv": "^2.4",
-    "drush/drush": "^9.0.0",
+    "drupal/core-composer-scaffold": "^9.0",
     "composer/installers": "^1.2",
-    "webflo/drupal-finder": "^1.0.0",
-    "webmozart/path-util": "^2.3"
+    "drush/drush": "^9.0||^10.0",
+    "vlucas/phpdotenv": "^2.4",
+    "oomphinc/composer-installers-extender": "^2.0"
   },
   "require-dev": {
-    "webflo/drupal-core-require-dev": "^8.8",
+    "drupal/core-dev": "^9.0",
     "vijaycs85/drupal-quality-checker": "^1.0"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -45,37 +50,25 @@
     "install:with-sqlite": "scripts/install-sqlite.sh"
   },
   "extra": {
+    "composer-exit-on-patch-failure": true,
+    "installer-types": ["bower-asset", "npm-asset"],
     "installer-paths": {
-      "web/core": [
-        "type:drupal-core"
+      "docroot/core": ["type:drupal-core"],
+      "docroot/libraries/{$name}": [
+        "type:drupal-library",
+        "type:bower-asset",
+        "type:npm-asset"
       ],
-      "web/libraries/{$name}": [
-        "type:drupal-library"
-      ],
-      "web/modules/contrib/{$name}": [
-        "type:drupal-module"
-      ],
-      "web/profiles/contrib/{$name}": [
-        "type:drupal-profile"
-      ],
-      "web/themes/contrib/{$name}": [
-        "type:drupal-theme"
-      ],
-      "drush/contrib/{$name}": [
-        "type:drupal-drush"
-      ]
-    },
-    "drupal-scaffold": {
-      "initial": {
-        "sites/default/default.services.yml": "sites/default/services.yml",
-        "sites/default/default.settings.php": "sites/default/settings.php"
-      },
-      "omit-defaults": false
+      "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+      "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+      "drush/contrib/{$name}": ["type:drupal-drush"]
     },
     "enable-patching": true,
     "patches": {}
   },
   "config": {
+    "sort-packages": true,
     "preferred-install": {
       "*": "auto"
     }
